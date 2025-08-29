@@ -5,7 +5,7 @@ import { MongoClient } from 'mongodb'
 import cors from "cors";
 
 
-
+const port = process.env.PORT || 5000;
 
 const app = express();
 const url = process.env.MONGO_URI;
@@ -50,6 +50,6 @@ app.delete("/del",async(req,res)=>{
 
   
 
-app.listen(5000, () => {
-  console.log("Server running at http://localhost:5000");
+app.listen(port, () => {
+  console.log("Server running at port", port);
 });

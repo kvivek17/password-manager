@@ -2,13 +2,14 @@ import React, { useRef, useState, useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
 const Manager = () => {
+const URL = import.meta.env.VITE_URL || "http://localhost:7000";
   let ref = useRef()
   let passref = useRef()
   const [form, setform] = useState({ site: "", username: "", password: "" })
   const [forms, setforms] = useState([])
 
   const getpassword = async () => {
-    let req = await fetch("http://localhost:5000/")
+    let req = await fetch(`${URL}/`)
     let password = await req.json()
     setforms(password)
     console.log(password);
@@ -48,7 +49,7 @@ getpassword();
         item.id === form.id ? form : item
       );
       setforms(updatedForms);
-   await fetch("http://localhost:5000/post",{method:"POST",headers:{"Content-Type":"application/json"},
+   await fetch(`${URL}/post`,{method:"POST",headers:{"Content-Type":"application/json"},
       body:JSON.stringify(form)
       })
     } else {
@@ -56,7 +57,7 @@ getpassword();
       const newForm = { ...form, id: uuidv4() };
       const updatedForms = [...forms, newForm];
       setforms(updatedForms);
-      let res = await fetch("http://localhost:5000/post",{method:"POST",headers:{"Content-Type":"application/json"},
+      let res = await fetch(`${URL}/post`,{method:"POST",headers:{"Content-Type":"application/json"},
       body:JSON.stringify(newForm)
       })
     }
@@ -70,7 +71,7 @@ getpassword();
     if (c) {
 
       setforms(forms.filter(items => items.id !== id))
-       let res = await fetch("http://localhost:5000/del",{method:"DELETE",headers:{"Content-Type":"application/json"},
+       let res = await fetch(`${URL}/del`,{method:"DELETE",headers:{"Content-Type":"application/json"},
       body:JSON.stringify( {id})
       })
     }
