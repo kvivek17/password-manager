@@ -1,12 +1,27 @@
-# React + Vite
+# 🔐 React Password Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and secure **Password Manager Web App** built with **React.js**.  
+It allows users to store, view, copy, and manage their credentials in one place, with an intuitive and responsive UI.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- ➕ **Add new credentials** (Website, Username/Email, Password).  
+- 📋 **Copy password** to clipboard with one click.  
+- 👀 **Toggle visibility** to hide/show passwords.  
+- 🗑️ **Delete credentials** securely.  
+- 💾 **LocalStorage persistence** – data is saved even after refreshing.  
+- 📱 **Responsive UI** with modern styling.  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+- **Frontend:** React.js, JavaScript (ES6+), HTML5, CSS3  
+- **State Management:** React Hooks (useState, useEffect)  
+- **Storage:** LocalStorage (for demo version)  
+- **Styling:** Tailwind CSS / Plain CSS (depending on your implementation)  
+
+---
+
+## vercel link
+https://passop-red.vercel.app/
